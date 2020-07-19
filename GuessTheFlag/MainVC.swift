@@ -50,7 +50,7 @@ class MainVC: UIViewController {
     var correctAnswer = Int.random(in: 0...2)
     var answers = [Bool]()
     var score = 0
-    
+
     //MARK: app life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,13 +97,14 @@ class MainVC: UIViewController {
 
     func addAnswerLbl(isCorrect: Bool) {
         let textLabel = UILabel()
-        textLabel.text = isCorrect ? "Correct" : "Wrong"
+        textLabel.text = isCorrect ? "✓" : "✘"
         textLabel.textAlignment = .center
         textLabel.textColor = isCorrect ? .green : .red
+        textLabel.font = UIFont.boldSystemFont(ofSize: 30)
         answersStackView.addArrangedSubview(textLabel)
     }
 
-    func showNewGameAlert(){
+    func showNewGameAlert() {
         let alert = UIAlertController(title: "Start New Game", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "New Game", style: .default, handler: { (action) in
             self.askQuestion()
@@ -112,7 +113,7 @@ class MainVC: UIViewController {
             self.answers.removeAll()
         })
     }
-    
+
     //MARK: IBActions
     @IBAction func selectFlagBtn(_ sender: UIButton) {
         print(correctAnswer, sender.tag)
@@ -126,16 +127,19 @@ class MainVC: UIViewController {
             addAnswerLbl(isCorrect: false)
             score -= 10
         }
-        if answers.count < 6 { askQuestion() } else { showNewGameAlert() }
+//        if answers.count < 6 { askQuestion() } else { showNewGameAlert() }
+        askQuestion()
         scoreLbl.text = String(score)
     }
 
     @IBAction func newGameBtnTapped(_ sender: UIButton) {
         answerLbl.text = ""
         askQuestion()
+        score = 0
+        scoreLbl.text = "0"
         answers.removeAll()
-        outerStackView.removeArrangedSubview(answersStackView)
-        outerStackView.addArrangedSubview(answersStackView)
+//        outerStackView.removeArrangedSubview(answersStackView)
+//        outerStackView.addArrangedSubview(answersStackView)
     }
 }
 

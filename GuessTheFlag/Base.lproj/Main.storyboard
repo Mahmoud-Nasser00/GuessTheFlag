@@ -44,14 +44,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-VM-SGN">
-                                <rect key="frame" x="186.33333333333334" y="464" width="41.666666666666657" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-VM-SGN">
+                                <rect key="frame" x="207" y="464" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uRO-wd-4vK">
-                                <rect key="frame" x="8" y="494.33333333333331" width="398" height="143.33333333333331"/>
+                                <rect key="frame" x="8" y="473.99999999999994" width="398" height="85.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kit-j0-WE6">
                                         <rect key="frame" x="12" y="0.0" width="374" height="50"/>
@@ -60,7 +60,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-kg-27i">
-                                        <rect key="frame" x="154" y="60.000000000000064" width="90" height="25.333333333333336"/>
+                                        <rect key="frame" x="154" y="60.000000000000007" width="90" height="25.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGU-De-hP1">
                                                 <rect key="frame" x="0.0" y="0.0" width="60.333333333333336" height="25.333333333333332"/>
@@ -76,26 +76,28 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai9-1Z-suF">
-                                        <rect key="frame" x="99" y="95.333333333333314" width="200" height="48"/>
-                                        <color key="backgroundColor" red="0.51816946269999997" green="0.83726912740000003" blue="0.78097110989999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="SiP-Js-ljF"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                        <state key="normal" title="NEW GAME">
-                                            <color key="titleColor" red="0.95686274510000002" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="newGameBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncg-8j-ebV"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai9-1Z-suF">
+                                <rect key="frame" x="107" y="569.33333333333337" width="200" height="48"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="SiP-Js-ljF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="NEW GAME">
+                                    <color key="titleColor" red="0.95686274510000002" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGameBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncg-8j-ebV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uRO-wd-4vK" secondAttribute="trailing" constant="8" id="5Yp-f9-msb"/>
+                            <constraint firstItem="ai9-1Z-suF" firstAttribute="top" secondItem="uRO-wd-4vK" secondAttribute="bottom" constant="10" id="AlJ-Sd-DMb"/>
+                            <constraint firstItem="ai9-1Z-suF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C8M-Zd-DYQ"/>
                             <constraint firstItem="RX6-9k-hGH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kqr-Vu-a7M"/>
                             <constraint firstItem="RX6-9k-hGH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="MoE-K3-TnY"/>
                             <constraint firstItem="7gK-VM-SGN" firstAttribute="top" secondItem="RX6-9k-hGH" secondAttribute="bottom" constant="20" id="Z0u-fi-lpu"/>
