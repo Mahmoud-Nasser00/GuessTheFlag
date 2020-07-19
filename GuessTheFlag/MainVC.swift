@@ -49,7 +49,8 @@ class MainVC: UIViewController {
     var countries = ["estonia", "monaco", "nigeria", "spain", "italy", "us", "uk", "france", "germany", "ireland", "poland", "russia"]
     var correctAnswer = Int.random(in: 0...2)
     var answers = [Bool]()
-
+    var score = 0
+    
     //MARK: app life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,11 +120,14 @@ class MainVC: UIViewController {
         if sender.tag == correctAnswer {
             setAnswerLblTitles(isCorrect: true)
             addAnswerLbl(isCorrect: true)
+            score += 10
         } else {
             setAnswerLblTitles(isCorrect: false)
             addAnswerLbl(isCorrect: false)
+            score -= 10
         }
         if answers.count < 6 { askQuestion() } else { showNewGameAlert() }
+        scoreLbl.text = String(score)
     }
 
     @IBAction func newGameBtnTapped(_ sender: UIButton) {
