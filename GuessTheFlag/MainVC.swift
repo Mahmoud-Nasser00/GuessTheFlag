@@ -15,7 +15,6 @@ class MainVC: UIViewController {
         btn1.tag = 0
         setBtnsConfig(btn: btn1)
 
-
     } }
     @IBOutlet weak var btn2: UIButton! { didSet {
         btn2.tag = 1
@@ -26,7 +25,6 @@ class MainVC: UIViewController {
     @IBOutlet weak var btn3: UIButton! { didSet {
         btn3.tag = 2
         setBtnsConfig(btn: btn3)
-
     } }
 
     @IBOutlet weak var answerLbl: UILabel!
@@ -49,7 +47,11 @@ class MainVC: UIViewController {
     var countries = ["estonia", "monaco", "nigeria", "spain", "italy", "us", "uk", "france", "germany", "ireland", "poland", "russia"]
     var correctAnswer = Int.random(in: 0...2)
     var answers = [Bool]()
-    var score = 0
+    var score = 0 {
+        didSet {
+            scoreLbl.text = String(score)
+        }
+    }
 
     //MARK: app life cycle
     override func viewDidLoad() {
@@ -75,6 +77,12 @@ class MainVC: UIViewController {
     func setBtnsConfig(btn: UIButton) {
         btn.layer.borderWidth = 1
         btn.layer.borderColor = UIColor.lightGray.cgColor
+        btn.layer.cornerRadius = 5
+        btn.layer.masksToBounds = true
+        btn.layer.shadowOffset = CGSize(width: 5, height: 5)
+        btn.layer.shadowColor = UIColor.gray.cgColor
+        btn.layer.shadowRadius = 5
+
     }
 
     func setBtnsImage(btn: UIButton) {
@@ -129,14 +137,13 @@ class MainVC: UIViewController {
         }
 //        if answers.count < 6 { askQuestion() } else { showNewGameAlert() }
         askQuestion()
-        scoreLbl.text = String(score)
+//        scoreLbl.text = String(score)
     }
 
     @IBAction func newGameBtnTapped(_ sender: UIButton) {
         answerLbl.text = ""
         askQuestion()
         score = 0
-        scoreLbl.text = "0"
         answers.removeAll()
 //        outerStackView.removeArrangedSubview(answersStackView)
 //        outerStackView.addArrangedSubview(answersStackView)
